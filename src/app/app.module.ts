@@ -28,6 +28,9 @@ import { AddComponent } from './transactions/add/add.component';
 import { EditComponent } from './transactions/edit/edit.component';
 import { MonthlyTransactionsChartComponent } from './dashboard/monthly-transactions-chart/monthly-transactions-chart.component';
 import { MonthlyTransactionsPerTypeChartComponent } from './dashboard/monthly-transactions-per-type-chart/monthly-transactions-per-type-chart.component';
+import { DividendsComponent } from './dividends/dividends.component';
+import { AddDividendsComponent } from './dividends/add-dividends/add-dividends.component';
+import { AssetsComponent } from './assets/assets.component';
 
 registerLocaleData(localePt);
 
@@ -45,7 +48,10 @@ registerLocaleData(localePt);
     EditComponent,
     DashboardComponent,
     MonthlyTransactionsChartComponent,
-    MonthlyTransactionsPerTypeChartComponent
+    MonthlyTransactionsPerTypeChartComponent,
+    DividendsComponent,
+    AddDividendsComponent,
+    AssetsComponent
   ],
   imports: [
     BrowserModule,
