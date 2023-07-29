@@ -31,6 +31,9 @@ import { MonthlyTransactionsPerTypeChartComponent } from './dashboard/monthly-tr
 import { DividendsComponent } from './dividends/dividends.component';
 import { AddDividendsComponent } from './dividends/add-dividends/add-dividends.component';
 import { AssetsComponent } from './assets/assets.component';
+import { AuthComponent } from './auth/auth.component';
+import { LoginComponent } from './templates/login/login.component';
+import { AppLayoutComponent } from './templates/app-layout/app-layout.component';
 
 registerLocaleData(localePt);
 
@@ -51,7 +54,10 @@ registerLocaleData(localePt);
     MonthlyTransactionsPerTypeChartComponent,
     DividendsComponent,
     AddDividendsComponent,
-    AssetsComponent
+    AssetsComponent,
+    AuthComponent,
+    LoginComponent,
+    AppLayoutComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@ export class TransactionsService {
   apiURL = "http://localhost:8765/api/v1/";
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     })
   };
 

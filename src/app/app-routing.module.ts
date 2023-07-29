@@ -10,16 +10,35 @@ import { EditComponent } from './transactions/edit/edit.component';
 // Dividends
 import { DividendsComponent } from './dividends/dividends.component';
 import { AddDividendsComponent } from './dividends/add-dividends/add-dividends.component';
+import { AuthComponent } from './auth/auth.component';
+import { LoginComponent } from './templates/login/login.component';
+import { AppLayoutComponent } from './templates/app-layout/app-layout.component';
+
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
-  // Transaction
-  { path: 'transactions', component: TransactionsComponent },
-  { path: 'transaction/add', component: AddComponent },
-  { path: 'transaction/edit/:id', component: EditComponent },
-  // Dividends
-  { path: 'dividends', component: DividendsComponent },
-  { path: 'dividends/add', component: AddDividendsComponent }
+  {
+    path: '', component: LoginComponent,
+    children: [
+      {
+        path: 'login',
+        component: AuthComponent
+      }
+    ]
+  },
+  {
+    path: '',
+    component: AppLayoutComponent,
+    children: [
+      { path: 'dashboard', component: DashboardComponent },
+      // Transaction
+      { path: 'transactions', component: TransactionsComponent },
+      { path: 'transaction/add', component: AddComponent },
+      { path: 'transaction/edit/:id', component: EditComponent },
+      // Dividends
+      { path: 'dividends', component: DividendsComponent },
+      { path: 'dividends/add', component: AddDividendsComponent }
+    ]
+  },
 ];
 
 @NgModule({
