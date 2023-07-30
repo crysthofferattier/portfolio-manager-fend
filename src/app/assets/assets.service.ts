@@ -6,13 +6,11 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AssetsService {
-  apiURL = 'http://localhost:8765/api/v1';
   env = environment;
 
   constructor(private http: HttpClient) { }
 
   getAssets() {
-    console.log(5555);
-    return this.http.get(this.apiURL + '/assets.json', this.env.httpHeaders);
+    return this.http.get(this.env.apiUrl + '/assets.json', this.env.httpHeaders);
   }
 }

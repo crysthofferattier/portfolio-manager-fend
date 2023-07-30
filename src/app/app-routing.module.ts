@@ -13,6 +13,7 @@ import { AddDividendsComponent } from './dividends/add-dividends/add-dividends.c
 import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './templates/login/login.component';
 import { AppLayoutComponent } from './templates/app-layout/app-layout.component';
+import { authguardGuard } from './auth/authguard.guard';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   {
     path: '',
     component: AppLayoutComponent,
+    canActivate:[authguardGuard],
     children: [
       { path: 'dashboard', component: DashboardComponent },
       // Transaction

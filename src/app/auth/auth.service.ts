@@ -16,6 +16,10 @@ export class AuthService {
   }
 
   logoff(){
-    return this.http.post(this.apiUrl + '/users/logoff.json', 'creds');
+    return this.http.get(this.apiUrl + '/users/logoff.json');
+  }
+
+  isAuthenticated() {
+    return !!localStorage.getItem('token');
   }
 }
