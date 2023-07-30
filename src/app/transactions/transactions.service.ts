@@ -46,4 +46,8 @@ export class TransactionsService {
   getMonthlyTransactionsPerType() {
     return this.http.get(this.apiURL + '/transactions/transactions-per-month-type.json', this.env.httpHeaders);
   }
+
+  getTotalPerAsset(){
+    return this.http.get(this.apiURL + '/transactions/total-per-asset.json', this.env.httpHeaders);
+  }
 }

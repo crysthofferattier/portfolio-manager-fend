@@ -1,7 +1,7 @@
 import { HttpHeaders } from "@angular/common/http";
 
 export const environment = {
-    production: false,
+    production: true,
     apiUrl: 'http://localhost:8765/api/v1',
     httpHeaders: {
         headers: new HttpHeaders({

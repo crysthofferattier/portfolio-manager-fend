@@ -14,108 +14,163 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <!-- Small boxes (Stat box) -->
-            <div class="row">
-                <div class="col-lg-4 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-success">
-                        <div class="inner">
-                            <h3>
-                                {{totalFIIs.total | currency:'BRL'}}
-                            </h3>
-                            <p>FIIs</p>
+            <div class="card card-default color-palette-box">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-tag"></i>
+                        TOTAL
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="col-12">
+                        <h5>Transactions</h5>
+                    </div>
+                    <!-- /.col-12 -->
+                    <div class="row">
+                        <div class="col-lg-4 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>
+                                        {{totalFIIs.total | currency:'BRL'}}
+                                    </h3>
+                                    <p>FIIs</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-home"></i>
+
+                        <div class="col-lg-4 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>
+                                        {{totalStocks.total | currency:'BRL'}}
+                                    </h3>
+                                    <p>STOCKS</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>
+                                        {{(totalPortfolio.total) | currency:'BRL'}}
+                                    </h3>
+                                    <p>
+                                        TOTAL
+                                        {{(totalPortfolio.total + 918.30) | currency:'BRL'}}
+                                        (R$918.30 Selic 2029)
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            
-                <div class="col-lg-4 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-success">
-                        <div class="inner">
-                            <h3>
-                                {{totalStocks.total | currency:'BRL'}}
-                            </h3>
-                            <p>STOCKS</p>
+                    <!-- /.row -->
+                    <div class="col-12">
+                        <h5 class="mt-3">Dividends</h5>
+                    </div>
+                    <!-- /.col-12 -->
+                    <div class="row">
+                        <div class="col-lg-4 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>
+                                        {{totalDivFiis | currency:'BRL'}}
+                                    </h3>
+                                    <p>FIIs</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
+
+                        <div class="col-lg-4 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>
+                                        {{totalDivStocks | currency:'BRL'}}
+                                    </h3>
+                                    <p>STOCKS</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>
+                                        {{totalDiv | currency:'BRL'}}
+                                    </h3>
+                                    <p>TOTAL</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <!-- /.row -->
                 </div>
-                <div class="col-lg-4 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-success">
-                        <div class="inner">
-                            <h3>
-                                {{totalPortfolio.total | currency:'BRL'}}
-                            </h3>
-                            <p>TOTAL (R$918.30 Selic 2029)</p>
+                <!-- /.card-body -->
+            </div>
+            <div class="card card-default color-palette-box">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-tag"></i>
+                        CHARTS
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="col-12">
+                        <h5>Transactions</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-6">
+                            <app-monthly-transactions-chart></app-monthly-transactions-chart>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-chart-pie"></i>
+                        <div class="col-lg-6 col-6">
+                            <app-monthly-transactions-per-type-chart></app-monthly-transactions-per-type-chart>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-success">
-                        <div class="inner">
-                            <h3>
-                                {{totalDivFiis | currency:'BRL'}}
-                            </h3>
-                            <p>FIIs</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-home"></i>
-                        </div>
-                    </div>
+            <div class="card card-default color-palette-box">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-tag"></i>
+                        CHARTS
+                    </h3>
                 </div>
-            
-                <div class="col-lg-4 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-success">
-                        <div class="inner">
-                            <h3>
-                                {{totalDivStocks | currency:'BRL'}}
-                            </h3>
-                            <p>STOCKS</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
-                        </div>
+                <div class="card-body">
+                    <div class="col-12">
+                        <h5>Transactions</h5>
                     </div>
-                </div>
-                <div class="col-lg-4 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-success">
-                        <div class="inner">
-                            <h3>
-                                {{totalDiv | currency:'BRL'}}
-                            </h3>
-                            <p>TOTAL</p>
+                    <div class="row">
+                        <div class="col-lg-6 col-6">
+                            <app-assets-chart></app-assets-chart>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-chart-pie"></i>
+                        <div class="col-lg-6 col-6">
+                            
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /.row -->
-            <!-- Main row -->
-            <div class="row">
-                <div class="col-lg-6 col-6">
-                    <app-monthly-transactions-chart></app-monthly-transactions-chart>
-                </div>
-                <div class="col-lg-6 col-6">
-                    <app-monthly-transactions-per-type-chart></app-monthly-transactions-per-type-chart>
-                </div>
-            </div>
-            <!-- /.row (main row) -->
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

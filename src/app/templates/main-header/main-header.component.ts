@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
@@ -8,10 +9,11 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class MainHeaderComponent {
 
-  constructor(private auth: AuthService){}
+  constructor(private auth: AuthService, private route: Router){}
 
   logoff(){    
     localStorage.clear();
     this.auth.logoff();
+    this.route.navigate(['login']);
   }
 }

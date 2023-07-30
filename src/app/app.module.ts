@@ -34,6 +34,7 @@ import { AssetsComponent } from './assets/assets.component';
 import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './templates/login/login.component';
 import { AppLayoutComponent } from './templates/app-layout/app-layout.component';
+import { AssetsChartComponent } from './dashboard/assets-chart/assets-chart.component';
 
 registerLocaleData(localePt);
 
@@ -57,7 +58,8 @@ registerLocaleData(localePt);
     AssetsComponent,
     AuthComponent,
     LoginComponent,
-    AppLayoutComponent
+    AppLayoutComponent,
+    AssetsChartComponent
   ],
   imports: [
     BrowserModule,
