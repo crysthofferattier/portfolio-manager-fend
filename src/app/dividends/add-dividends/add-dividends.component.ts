@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { DividendsService } from '../dividends.service';
 import { AssetsService } from 'src/app/assets/assets.service';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-add-dividends',
@@ -19,7 +20,8 @@ export class AddDividendsComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private dividendsSrvc: DividendsService,
-    private assetsSrvc: AssetsService
+    private assetsSrvc: AssetsService,
+    private toast: NgToastService
   ) { };
 
   ngOnInit(): void {
@@ -29,7 +31,12 @@ export class AddDividendsComponent implements OnInit {
   onSubmit() {
     this.dividendsSrvc.add(this.addDividendForm.value)
       .subscribe((data: any = {}) => {
-        console.log(data)
+        this.toast.success({
+          detail: "Dividend",
+          summary: "Dividen Saved!",
+          position: "topRight",
+          duration: 5000
+        });
       });
   }
 

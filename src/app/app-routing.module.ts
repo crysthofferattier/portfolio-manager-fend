@@ -14,6 +14,7 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './templates/login/login.component';
 import { AppLayoutComponent } from './templates/app-layout/app-layout.component';
 import { authguardGuard } from './auth/authguard.guard';
+import { AssetsComponent } from './assets/assets.component';
 
 
 const routes: Routes = [
@@ -38,7 +39,9 @@ const routes: Routes = [
       { path: 'transaction/edit/:id', component: EditComponent },
       // Dividends
       { path: 'dividends', component: DividendsComponent },
-      { path: 'dividends/add', component: AddDividendsComponent }
+      { path: 'dividends/add', component: AddDividendsComponent },
+      // Assets
+      { path: 'assets', component: AssetsComponent },
     ]
   },
 ];

@@ -53,9 +53,9 @@ export class MonthlyTransactionsPerTypeChartComponent {
     this.transactionSrvc.getMonthlyTransactionsPerType()
       .subscribe((data: any = {}) => {
         for (let index = 0; index < data.monthlyTransactions.length; index++) {
-          if (data.monthlyTransactions[index].type_id === 2) { //FIIs
+          if (data.monthlyTransactions[index].type_id === 1) { //FIIs
             this.chartOptions.data[0].dataPoints.push(data.monthlyTransactions[index]);
-          } else if (data.monthlyTransactions[index].type_id === 3) {
+          } else if (data.monthlyTransactions[index].type_id === 2) {
             this.chartOptions.data[1].dataPoints.push(data.monthlyTransactions[index]);
           } else {
             continue;

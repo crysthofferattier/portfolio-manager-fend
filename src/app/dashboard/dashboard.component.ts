@@ -34,14 +34,14 @@ export class DashboardComponent implements OnInit {
   }
 
   getTotalStocks() {
-    this.transactionsSrvc.getTotalPerType(3)
+    this.transactionsSrvc.getTotalPerType(2)
       .subscribe((data: {}) => {
         this.totalStocks = data;
       });
   }
 
   getTotalFIIs() {
-    this.transactionsSrvc.getTotalPerType(2)
+    this.transactionsSrvc.getTotalPerType(1)
       .subscribe((data: {}) => {
         this.totalFIIs = data;
       });

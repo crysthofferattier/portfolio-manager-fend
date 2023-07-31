@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { NgToastModule } from 'ng-angular-popup';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
@@ -62,12 +63,13 @@ registerLocaleData(localePt);
     AssetsChartComponent
   ],
   imports: [
+    NgToastModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    CanvasJSAngularChartsModule
+    CanvasJSAngularChartsModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' }

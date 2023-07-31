@@ -20,6 +20,7 @@ export class DividendsComponent implements OnInit {
     this.dividendsSrvc.getDividends()
       .subscribe((data: any = {}) => {
         this.dividends = data.dividends;
+        console.log(this.dividends);
       });
   }
 
