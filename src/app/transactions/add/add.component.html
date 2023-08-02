@@ -26,14 +26,17 @@
                         <form [formGroup]="addTransaction" (ngSubmit)="onSubmit()">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-md-8">
                                         <div class="form-group">
-                                            <label for="symbol">Symbol</label>
-                                            <input type="text" class="form-control" id="symbol" maxlength="10"
-                                                placeholder="SYMBOL" formControlName="symbol">
+                                            <label>Asset</label>
+                                            <select class="form-control" formControlName="asset_id">
+                                                <option *ngFor="let asset of assets" value="{{asset.id}}">
+                                                    {{asset.symbol}}
+                                                </option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <label for="symbol">Date</label>
                                         <div class="form-group">
                                             <div class="input-group">
@@ -41,10 +44,7 @@
                                                     <span class="input-group-text"><i
                                                             class="far fa-calendar-alt"></i></span>
                                                 </div>
-                                                <input type="text" class="form-control" data-inputmask-alias="datetime"
-                                                    data-inputmask-inputformat="mm/dd/yyyy" data-mask=""
-                                                    inputmode="numeric" placeholder="mm/dd/yyyy" maxlength="10"
-                                                    id="trade_date" formControlName="trade_date">
+                                                <input type="date" class="form-control" formControlName="trade_date">
                                             </div>
                                         </div>
                                     </div>
@@ -70,22 +70,12 @@
                                                 placeholder="Value" formControlName="quantity">
                                         </div>
                                     </div>
-                                    <div class="col-4">
-
-                                        <div class="form-group">
-                                            <label>Type</label>
-                                            <select class="form-control" formControlName="type_id">
-                                                <option data-select2-id="1" value="1">SELIC</option>
-                                                <option data-select2-id="2" value="2">FIIS</option>
-                                                <option data-select2-id="3" value="3">STOCKS</option>
-                                            </select>
-                                        </div>                                        
-                                    </div>
                                 </div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <a href="transactions" type="button" class="btn btn-primary">Cancel</a>
+                                <button type="submit" class="btn btn-primary float-right">Add</button>
                             </div>
                         </form>
                     </div>
@@ -103,8 +93,3 @@
     </section>
     <!-- /.content -->
 </div>
-
-<script>
-    //Datemask2 mm/dd/yyyy
-    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
-</script>

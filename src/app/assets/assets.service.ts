@@ -10,7 +10,21 @@ export class AssetsService {
 
   constructor(private http: HttpClient) { }
 
-  getAssets() {
+  index() {
     return this.http.get(this.env.apiUrl + '/assets.json', this.env.httpHeaders);
   }
+
+  add() { }
+
+  edit(id: any = 0) { }
+
+  delete(id: any = 0) { }
+
+  /*
+  // Get assets list (symbol)
+  */
+  getAssetsList() {
+
+  }
+
 }

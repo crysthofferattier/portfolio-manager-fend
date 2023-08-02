@@ -41,7 +41,7 @@ export class AddDividendsComponent implements OnInit {
   }
 
   getAssets() {
-    this.assetsSrvc.getAssets()
+    this.assetsSrvc.index()
       .subscribe((data: any = {}) => {
         this.assets = data.assets
       });

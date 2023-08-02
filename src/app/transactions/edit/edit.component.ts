@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from "@angular/router";
 import { TransactionsService } from '../transactions.service';
 import { formatDate } from '@angular/common';
+import { AssetsService } from 'src/app/assets/assets.service';
 
 
 @Component({
@@ -13,22 +14,24 @@ import { formatDate } from '@angular/common';
 export class EditComponent implements OnInit {
   formTransaction = this.formBuilder.group({
     id: 0,
-    symbol: '',
+    asset_id: '',
     trade_date: '',
     value: 0,
     quantity: 0,
-    total: 0,
-    type_id: ''
+    total: 0
   });
+  assets: any = [];
 
   constructor(
     private transactionService: TransactionsService,
     private formBuilder: FormBuilder,
     private activateRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private assetsSrvc: AssetsService,
   ) { };
 
   ngOnInit(): void {
+    this.getAssetsList();
     this.formTransaction.value.id = Number(this.activateRoute.snapshot.paramMap.get('id'));
     this.transactionService.getTransaction(this.formTransaction.value.id)
       .subscribe((data: any = {}) => {
@@ -43,6 +46,13 @@ export class EditComponent implements OnInit {
       .subscribe((data: {}) => {
         console.log(data);
         this.router.navigate(['/']);
+      });
+  }
+
+  getAssetsList() {
+    this.assetsSrvc.index()
+      .subscribe((data: any = []) => {
+        this.assets = data.assets;
       });
   }
 }

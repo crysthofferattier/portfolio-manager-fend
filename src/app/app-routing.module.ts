@@ -44,6 +44,7 @@ const routes: Routes = [
       { path: 'assets', component: AssetsComponent },
     ]
   },
+  { path: '**', redirectTo: 'dashboard', pathMatch: 'full' },
 ];
 
 @NgModule({

@@ -1,1 +1,96 @@
-<p>assets works!</p>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Assets</h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <a href="assets/add" type="button" class="btn btn-primary">
+                                Add
+                            </a>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <div id="dataTableDefault_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table id="dataTableDefault"
+                                            class="table table-bordered table-striped dataTable dtr-inline"
+                                            aria-describedby="dataTableDefault_info">
+                                            <thead>
+                                                <tr style="text-align: center;">
+                                                    <th class="sorting" tabindex="0" aria-controls="dataTableDefault"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Rendering engine: activate to sort column descending"
+                                                        hidden="hidden">
+                                                        ID</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="dataTableDefault"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Browser: activate to sort column ascending">SYMBOL
+                                                    </th>
+                                                    <th class="sorting" tabindex="0" aria-controls="dataTableDefault"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Browser: activate to sort column ascending">NAME
+                                                    </th>
+                                                    <th class="sorting" tabindex="0" aria-controls="dataTableDefault"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Browser: activate to sort column ascending">TYPE
+                                                    </th>
+                                                    <th class="sorting" tabindex="0" aria-controls="dataTableDefault"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Browser: activate to sort column ascending">Options
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let asset of assets">
+                                                    <td hidden="hidden">{{ asset.id }}</td>
+                                                    <td class="dtr-control sorting_1" tabindex="0">{{asset.symbol}}</td>
+                                                    <td class="dtr-control sorting_1" tabindex="0">{{ asset.name }}</td>
+                                                    <td class="dtr-control sorting_1" tabindex="0">{{
+                                                        asset.assets_type.name }}</td>
+                                                    <td class="dtr-control sorting_1" tabindex="0"
+                                                        style="text-align: center;">
+                                                        <div class="btn-group">
+                                                            <a href="asset/edit/{{asset.id}}" class="btn btn-info">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                            <button type="button" class="btn btn-danger"
+                                                                (click)="delete(asset.id)">
+                                                                <i class="fa fa-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

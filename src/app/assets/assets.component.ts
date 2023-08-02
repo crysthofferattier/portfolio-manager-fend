@@ -8,12 +8,22 @@ import { AssetsService } from './assets.service';
 })
 export class AssetsComponent implements OnInit {
 
-  constructor(private assetsSrvc: AssetsService){}
-  
+  assets: any = [];
+
+  constructor(private assetsSrvc: AssetsService) { }
+
   ngOnInit(): void {
-    this.assetsSrvc.getAssets()
-    .subscribe((data: any = {}) => {
-      console.log(data);
-    });
+    this.index();
+  }
+
+  index() {
+    this.assetsSrvc.index()
+      .subscribe((data: any = {}) => {
+        this.assets = data.assets;
+      });
+  }
+
+  delete(id: any = 0) {
+
   }
 }
