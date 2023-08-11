@@ -42,6 +42,7 @@ const routes: Routes = [
       { path: 'dividends/add', component: AddDividendsComponent },
       // Assets
       { path: 'assets', component: AssetsComponent },
+      { path: 'assets/add', component: AssetsComponent },
     ]
   },
   { path: '**', redirectTo: 'dashboard', pathMatch: 'full' },

@@ -28,4 +28,12 @@ export class DividendsService {
   getDividendsPerType() {
     return this.http.get(this.apiURL + '/dividends/get-total-dividends-per-type.json', this.env.httpHeaders);
   }
+
+  getMonthlyDividends() {
+    return this.http.get(this.apiURL + '/dividends/dividends-per-month.json', this.env.httpHeaders);
+  }
+
+  getMonthlyDividendsPerType() {
+    return this.http.get(this.apiURL + '/dividends/dividends-per-month-type.json', this.env.httpHeaders);
+  }
 }

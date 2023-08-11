@@ -36,6 +36,8 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './templates/login/login.component';
 import { AppLayoutComponent } from './templates/app-layout/app-layout.component';
 import { AssetsChartComponent } from './dashboard/assets-chart/assets-chart.component';
+import { MonthlyDividendsChartComponent } from './dashboard/monthly-dividends-chart/monthly-dividends-chart.component';
+import { MonthlyDividendsPerTypeChartComponent } from './dashboard/monthly-dividends-per-type-chart/monthly-dividends-per-type-chart.component';
 
 registerLocaleData(localePt);
 
@@ -60,7 +62,9 @@ registerLocaleData(localePt);
     AuthComponent,
     LoginComponent,
     AppLayoutComponent,
-    AssetsChartComponent
+    AssetsChartComponent,
+    MonthlyDividendsChartComponent,
+    MonthlyDividendsPerTypeChartComponent
   ],
   imports: [
     NgToastModule,
